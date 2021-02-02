@@ -40,7 +40,7 @@ while True:
     user = create_user()
     if('注册成功' in signup(user)):
         push_token = os.environ.get('PUSH_TOKEN')
-        link = get_link(user)
+        link = get_link(user)+'?sub=1'
         send(push_token,'几鸡订阅地址',link)
         print(link)
         break
