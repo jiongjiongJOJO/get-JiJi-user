@@ -12,7 +12,6 @@ def get_new_host():
     while True:
         if(300<=response.status_code<400):
             link = response.headers['Location']
-            print(link)
             response = requests.get(link,allow_redirects=False)
         else:
             return (urlparse(link)[1])
