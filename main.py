@@ -8,6 +8,7 @@ def send(push_token,title,text):
     requests.get('http://pushplus.hxtrip.com/send?token='+push_token+'&title='+title+'&content='+text+'&template=html')
 def get_new_host():
     link = 'https://j01.space/'
+    '''
     response = requests.get(link,allow_redirects=False)
     while True:
         if(300<=response.status_code<400):
@@ -15,6 +16,8 @@ def get_new_host():
             response = requests.get(link,allow_redirects=False)
         else:
             return (urlparse(link)[1])
+    '''
+    return link
 def create_user():
     string = '0123456789abcdefghijklmnopqrstuvwxyz'
     times = random.randint(8,12)
